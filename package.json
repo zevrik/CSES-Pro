@@ -4,6 +4,24 @@
   "description": "CSES Pro",
   "type": "module",
   "private": true,
+  "license": "MIT",
+  "author": "Nisarg Vekariya",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/zevrik/CSES-Pro.git"
+  },
+  "homepage": "https://github.com/zevrik/CSES-Pro#readme",
+  "bugs": {
+    "url": "https://github.com/zevrik/CSES-Pro/issues"
+  },
+  "keywords": [
+    "cses",
+    "chrome-extension",
+    "competitive-programming",
+    "typescript",
+    "vite",
+    "manifest-v3"
+  ],
   "scripts": {
     "dev": "vite",
     "build": "tsc && vite build",

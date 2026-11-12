@@ -1,5 +1,9 @@
 # CSES Pro — Ultimate CSES Enhancer (Chrome Extension)
 
+[![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
+[![Manifest V3](https://img.shields.io/badge/Manifest-V3-blue.svg)](manifest.json)
+[![TypeScript](https://img.shields.io/badge/TypeScript-5.x-3178c6.svg)](tsconfig.json)
+
 A premium, feature-rich Chrome Extension that seamlessly enhances your competitive programming experience on [cses.fi](https://cses.fi/). It adds progress tracking, dynamic filtering, Codeforces-style code pasting and input/output copy buttons, streak tracking, and interactive dashboards—fully integrated into the CSES native user interface with adaptive light/dark theme support.
 
 ---
@@ -14,8 +18,8 @@ Because we believe this tool should be completely free for student developers, i
    Download this project as a ZIP file and extract it, or clone it using git:
 
    ```bash
-   git clone https://github.com/your-username/cses-pro.git
-   cd cses-pro
+   git clone https://github.com/zevrik/CSES-Pro.git
+   cd CSES-Pro
    ```
 
 2. **Install Developer Dependencies**
@@ -139,17 +143,17 @@ Injected right below the dashboard, these interactive toggles give you powerful 
 This is the exact, complete file layout of the CSES Pro project workspace:
 
 ```
-CSES Extension/
+CSES-Pro/
 ├── dist/                      # Bundled Chrome Extension files (auto-generated on build)
 ├── icons/
-│   └── image.png              # Chrome toolbar and store icon
-├── images/
-│   └── .gitkeep               # Directory containing before/after comparison screenshots
-├── public/
-│   └── icons/                 # Subfolders matching manifest.json icon sizes
-│       ├── icon128.png        # 128x128 pixel extension icon
-│       ├── icon16.png         # 16x16 pixel extension icon
-│       └── icon48.png         # 48x48 pixel extension icon
+│   └── image.png              # Chrome toolbar and extension icon
+├── images/                    # Before/after comparison screenshots for documentation
+│   ├── 1_a.png / 1_b.png
+│   ├── 2_a.png / 2_b.png
+│   ├── 3_a.png / 3_b.png
+│   ├── 4_a.png / 4_b.png
+│   ├── 5_a.png / 5_b.png
+│   └── 6_a.png / 6_b.png
 ├── src/
 │   ├── background/
 │   │   └── sync.ts            # Background service worker message relayer and storage sync
@@ -162,14 +166,18 @@ CSES Extension/
 │   │   └── username.ts        # Detection script tracking authentication state
 │   ├── data/
 │   │   └── cses-problems.json # Index mapping CSES problem IDs to title and category meta
-│   ├── services/
-│   │   ├── parser.ts          # Core HTML DOM extraction functions for username and solves
-│   │   └── storage.ts         # User-prefixed local storage accessors and legacy database migration
-│   └── types/                 # Empty directory retained for tsconfig compiler mapping
+│   └── services/
+│       ├── parser.ts          # Core HTML DOM extraction functions for username and solves
+│       └── storage.ts         # User-prefixed local storage accessors and legacy database migration
 ├── .gitignore                 # Excludes build output, node_modules, and editor directories from Git
+├── CODE_OF_CONDUCT.md         # Community behavior standards
+├── CONTRIBUTING.md            # Development setup, conventions, and pull request guidelines
+├── LICENSE                    # MIT open-source license
 ├── manifest.json              # Chrome Manifest V3 descriptor detailing file matches and script targets
 ├── package-lock.json          # Complete lockfile representing exact tree of active npm dependencies
 ├── package.json               # Node project metadata, build script definitions, and development modules
+├── README.md                  # Project documentation
+├── SECURITY.md                # Security policy and vulnerability reporting instructions
 ├── tsconfig.json              # Main TypeScript compilation parameters for the src codebase
 ├── tsconfig.node.json         # Node compilation environments for configuration files
 └── vite.config.ts             # Bundler specifications wrapping crxjs plugin configurations
